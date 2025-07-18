@@ -8,13 +8,14 @@ function createtokenforuser(user) {
     email : user.email , 
     profileimage : user.profileimage,
     role: user.role ,
+    fullName : user.fullName ,
   };
   const token = JWT.sign(payload, secret );
   return token ;  
 }
 
 function validateToken(token) {
-  const payload = JWT.verify(tokem, secret) ; 
+  const payload = JWT.verify(token, secret) ; 
   return payload ; 
 }
 
